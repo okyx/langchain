@@ -94,10 +94,10 @@ class Petals(LLM):
         )
         try:
             from petals import AutoDistributedModelForCausalLM
-            from transformers import LLamaTokenizerFast
+            from transformers import LlamaTokenizerFast
 
             model_name = values["model_name"]
-            values["tokenizer"] = LLamaTokenizerFast.from_pretrained(model_name)
+            values["tokenizer"] = LlamaTokenizerFast.from_pretrained(model_name)
             values["client"] = AutoDistributedModelForCausalLM.from_pretrained(model_name)
             values["huggingface_api_key"] = huggingface_api_key
 
